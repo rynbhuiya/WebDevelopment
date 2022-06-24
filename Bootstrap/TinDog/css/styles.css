@@ -26,12 +26,11 @@ body {
 }
 
 .container-fluid {
-  padding: 3% 15%;
+  padding: 3% 15% 7%;
 }
 
 #title {
   background-color: #ff4c68;
-  height: 50rem;
   color: #fff;
 }
 
@@ -65,11 +64,19 @@ body {
 .iphone-img {
   transform: rotate(25deg);
   width: 60%;
+  position: absolute;
+  right: 30%;
+}
+
+.title-img {
+  position: relative;
 }
 
 /* Features Section*/
 #features {
   padding: 7% 15%;
+  background-color: #fff;
+  position: relative;
 }
 
 .feature-box {
@@ -114,4 +121,51 @@ body {
 
 .carousel-item {
   padding: 7% 15%;
+}
+
+
+/* Pricing Section */
+
+#pricing {
+  padding: 100px;
+  text-align: center;
+}
+
+.pricing-col {
+  padding: 3% 2%;
+}
+
+@media (max-width: 1028px) {
+  #title {
+    text-align: center;
+  }
+  .iphone-img {
+    position: static;
+    transform: rotate(0);
+  }
+}
+
+/* Call to Action */
+#cta {
+  padding: 7% 15% 5%;
+  text-align: center;
+  background-color: #ff4c68;
+}
+
+.cta-header {
+  font-weight: 900;
+  font-size: 3rem;
+  color: #fff;
+  line-height: 1.5;
+}
+
+/* Footer Section */
+#footer {
+  background-color: #fff;
+  text-align: center;
+  padding: 4%;
+}
+
+.footer-icon {
+  margin: 20px 10px;
 }
