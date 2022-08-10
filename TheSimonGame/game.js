@@ -15,7 +15,6 @@ function nextSequence() {
   gamePattern.push(randomChosenColor);
 
   // Flash random button with sound
-  console.log("gamePattern: ", gamePattern);
   $("#" + randomChosenColor).fadeOut(100).fadeIn(100);
 
   var audio = new Audio('./sounds/' + randomChosenColor + '.mp3');
@@ -34,8 +33,6 @@ $(".btn").on("click", function() {
   animatePress(userChosenColor);
 
   userClickedPattern.push(userChosenColor);
-  console.log("userClickedPattern: ", userClickedPattern);
-
   checkAnswer(userClickedPattern.length);
 });
 
@@ -62,13 +59,11 @@ $(document).on("keypress", function(e) {
 // Check if answer is correct
 function checkAnswer(idx) {
   if (gamePattern[idx-1] === userClickedPattern[idx-1]) {
-    console.log("success");
     if (level === idx) {
       setTimeout(nextSequence, 1000);
     }
   }
   else {
-    console.log("wrong");
     var wrongAudio = new Audio('./sounds/wrong.mp3');
     wrongAudio.play();
 
