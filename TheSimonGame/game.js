@@ -23,6 +23,25 @@ $(".btn").on("click", function() {
   userChosenColor = this.id;
   console.log("user chosen color: " + userChosenColor);
 
+  // Play audio for clicked button
+  playSound(userChosenColor);
+
+  // Add click animation
+  animatePress(userChosenColor);
+
   userClickedPattern.push(userChosenColor);
   console.log(userClickedPattern);
 })
+
+
+function playSound(name) {
+  var audio = new Audio('./sounds/' + name + '.mp3');
+  audio.play();
+}
+
+function animatePress(currentColor) {
+  $("#" + currentColor).addClass("pressed");
+  setTimeout(function() {
+    $("#" + currentColor).removeClass("pressed");
+  }, 100);
+}
